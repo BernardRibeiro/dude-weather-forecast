@@ -1,0 +1,54 @@
+﻿@Scripts.Render("~/Views/Home")
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Would you like to know the weather forecast?</h2>
+    </div>
+    <div class="col-md-2 mt-1">
+        <button type="button" class="btn btn-primary" id="btnYes">Yes</button>
+    </div>
+</div>
+<div class="row" id="result">
+    <div class="col-md-12">
+        <div class="card mt-3">
+            <div class="card-header">
+                Weather Forecast
+            </div>
+            <div id="error-content">
+                <h4></h4>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="line">
+                        <label>Description: </label>
+                        <p id="description"></p>
+                    </div>
+
+                    <div class="line">
+                        <label>Temp: </label>
+                        <p id="temp"></p>
+                    </div>
+
+                    <div class="line">
+                        <label>Temp min: </label>
+                        <p id="temp-min"></p>
+                    </div>
+
+                    <div class="line">
+                        <label>Temp max: </label>
+                        <p id="temp-max"></p>
+                    </div>
+
+                    <div class="line">
+                        <label>Localization: </label>
+                        <p id="localization"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

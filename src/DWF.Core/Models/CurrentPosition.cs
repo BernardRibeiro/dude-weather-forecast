@@ -1,6 +1,6 @@
-﻿namespace DMF.Site.Models
+﻿namespace DWF.Core.Models
 {
-    public class CurrentPositionModel
+    public class CurrentPosition
     {
         public string Latitude { get; set; }
         public string Longitude { get; set; }

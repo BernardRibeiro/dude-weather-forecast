@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace DMF.Site
+namespace DWF.Site
 {
     public class BundleConfig
     {

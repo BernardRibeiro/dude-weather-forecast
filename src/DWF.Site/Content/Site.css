@@ -1,0 +1,18 @@
+﻿input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.line {
+    display: flex;
+}
+
+    .line label {
+        font-weight: bolder;
+        margin-right: 10px;
+    }
+
+#result, #error-content {
+    visibility: hidden;
+}

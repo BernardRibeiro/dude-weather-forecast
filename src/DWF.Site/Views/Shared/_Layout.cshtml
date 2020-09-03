@@ -10,20 +10,20 @@
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             @Html.ActionLink("Dude - Weather Forecast", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+    <div class="container mt-5">
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Bernard Ribeiro</p>
         </footer>
     </div>
-    
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
