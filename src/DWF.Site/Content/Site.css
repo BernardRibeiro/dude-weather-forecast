@@ -4,7 +4,7 @@ textarea {
     max-width: 280px;
 }
 
-.line {
+.info div {
     display: flex;
 }
 
@@ -12,7 +12,3 @@ textarea {
         font-weight: bolder;
         margin-right: 10px;
     }
-
-#result, #error-content {
-    visibility: hidden;
-}

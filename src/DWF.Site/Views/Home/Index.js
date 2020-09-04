@@ -3,49 +3,44 @@
 
     $(document).ready(function () {
 
-        const setShowElement = (element, show) => {
-            $(element).css('visibility', show ? 'visible' : 'hidden');
-        };
+        new Vue({
+            el: '#app',
+            data: {
+                result: {},
+                messageError: '',
+                showResult: false,
+                showError: false,
+                showSuccess: false
+            },
+            methods: {
+                getWeatherForecast: async function () {
+                    const _this = this;
 
-        const initialize = () => {
-            setShowElement('#result', false);
-            setShowElement('#error-content', false);
-        };
+                    navigator.geolocation.getCurrentPosition(resp => {                       
+                        const data = {
+                            latitude: resp.coords.latitude,
+                            longitude: resp.coords.longitude
+                        };
 
-        $('#btnYes').click(() => {
-            initialize();
+                        $.post(
+                            "/weatherforecast/index",
+                            data,
+                            function (response) {
+                                _this.result = JSON.parse(response); 
+                                _this.showSuccess = true;
+                                _this.showResult = true;
+                            }
+                        ).fail(function (response) {
+                            const data = JSON.parse(response.responseText);
 
-            navigator.geolocation.getCurrentPosition(resp => {
-                const data = {
-                    latitude: resp.coords.latitude,
-                    longitude: resp.coords.longitude
-                };
-
-                $.post(
-                    "/weatherforecast/index",
-                    data,
-                    function (response) {
-                        const data = JSON.parse(response);
-
-                        $('#description').html(data.weather[0].description);
-                        $('#temp').html(data.main.temp);
-                        $('#temp-min').html(data.main.temp_min);
-                        $('#temp-max').html(data.main.temp_max);
-                        $('#localization').html(data.name);
-
-                        setShowElement('#result', true);
-                    }
-                ).fail(function (response) {
-                    const data = JSON.parse(response.responseText);
-
-                    $("#error-content h4").html(data.error);
-
-                    setShowElement('#error-content', true);
-                });
-            });
-
+                            _this.messageError = data.error;
+                            _this.showError = true;
+                            _this.showResult = true;
+                        });
+                    });
+                }
+            }
         });
 
-        initialize();
     });
 })();

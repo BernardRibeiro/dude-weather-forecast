@@ -4,51 +4,55 @@
     ViewBag.Title = "Home";
 }
 
-<div class="row">
-    <div class="col-md-8">
-        <h2>Would you like to know the weather forecast?</h2>
-    </div>
-    <div class="col-md-2 mt-1">
-        <button type="button" class="btn btn-primary" id="btnYes">Yes</button>
-    </div>
-</div>
-<div class="row" id="result">
-    <div class="col-md-12">
-        <div class="card mt-3">
-            <div class="card-header">
-                Weather Forecast
+    <div id="app">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Would you like to know the weather forecast?</h2>
             </div>
-            <div id="error-content">
-                <h4></h4>
+            <div class="col-md-2 mt-1">
+                <button type="button" class="btn btn-primary" v-on:click="getWeatherForecast">Yes</button>
             </div>
-            <div class="card-body">
-                <div>
-                    <div class="line">
-                        <label>Description: </label>
-                        <p id="description"></p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-3" v-if="showResult">
+                    <div class="card-header">
+                        Weather Forecast
                     </div>
-
-                    <div class="line">
-                        <label>Temp: </label>
-                        <p id="temp"></p>
+                    <div v-if="showError">
+                        <h5 class="m-3">{{ messageError }}</h5>
                     </div>
+                    <div v-if="showSuccess">
+                        <div class="card-body">
+                            <div class="info">
+                                <div>
+                                    <label>Description: </label>
+                                    <p>{{ result.weather[0].description }}</p>
+                                </div>
 
-                    <div class="line">
-                        <label>Temp min: </label>
-                        <p id="temp-min"></p>
-                    </div>
+                                <div>
+                                    <label>Temp: </label>
+                                    <p>{{ result.main.temp }}</p>
+                                </div>
 
-                    <div class="line">
-                        <label>Temp max: </label>
-                        <p id="temp-max"></p>
-                    </div>
+                                <div>
+                                    <label>Temp min: </label>
+                                    <p>{{ result.main.temp_min }}</p>
+                                </div>
 
-                    <div class="line">
-                        <label>Localization: </label>
-                        <p id="localization"></p>
+                                <div>
+                                    <label>Temp max: </label>
+                                    <p>{{ result.main.temp_max }}</p>
+                                </div>
+
+                                <div>
+                                    <label>Localization: </label>
+                                    <p>{{ result.name }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
