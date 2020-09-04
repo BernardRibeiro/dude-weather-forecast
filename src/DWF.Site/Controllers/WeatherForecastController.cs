@@ -1,5 +1,5 @@
 ﻿using DMF.Site.Controllers;
-using DWF.Business;
+using DWF.Business.Interfaces;
 using DWF.Core.Models;
 using DWF.Site.Models;
 using System;
@@ -10,6 +10,12 @@ namespace DWF.Site.Controllers
 {
     public class WeatherForecastController : BaseController
     {
+        readonly IWeatherForecastService _weatherForecastService;
+        public WeatherForecastController(IWeatherForecastService weatherForecastService)
+        {
+            _weatherForecastService = weatherForecastService;
+        }
+
         [HttpPost]
         public async Task<JsonResult> Index(CurrentPositionViewModel currentPositionViewModel)
         {
@@ -21,9 +27,7 @@ namespace DWF.Site.Controllers
                     Longitude = currentPositionViewModel.Longitude
                 };
 
-                WeatherForecastService service = new WeatherForecastService();
-
-                var weatherForecastResult = await service.GetWeatherForecastAsync(currentPosition);
+                var weatherForecastResult = await _weatherForecastService.GetWeatherForecastAsync(currentPosition);
                 
                 return Json(weatherForecastResult);
             }

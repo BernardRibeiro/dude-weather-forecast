@@ -1,16 +1,21 @@
-﻿using DWF.Core.Models;
-using DWF.IntegrationService;
+﻿using DWF.Business.Interfaces;
+using DWF.Core.Models;
+using DWF.IntegrationService.Interfaces;
 using System.Threading.Tasks;
 
 namespace DWF.Business
 {
-    public class WeatherForecastService
+    public class WeatherForecastService : IWeatherForecastService
     {
+        readonly IWeatherForecastIntegrationService _weatherForecastIntegrationService;
+        public WeatherForecastService(IWeatherForecastIntegrationService weatherForecastIntegrationService)
+        {
+            _weatherForecastIntegrationService = weatherForecastIntegrationService;
+        }
+
         public async Task<string> GetWeatherForecastAsync(CurrentPosition currentPosition)
         {
-            WeatherForecastIntegrationService integrationService = new WeatherForecastIntegrationService();
-
-            return await integrationService.GetWeatherForecastAsync(currentPosition);
+            return await _weatherForecastIntegrationService.GetWeatherForecastAsync(currentPosition);
         }
     }
 }
