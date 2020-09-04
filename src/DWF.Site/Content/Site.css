@@ -1,14 +1,8 @@
-﻿input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-.info div {
+﻿.info div {
     display: flex;
 }
 
-    .line label {
+    div label {
         font-weight: bolder;
         margin-right: 10px;
     }
