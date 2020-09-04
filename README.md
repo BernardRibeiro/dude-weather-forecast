@@ -4,14 +4,16 @@
 
 - 40m - analyze and tasks mapping
 - 20m - creating project and updating references
-- 1h40m - working frontend
+- 1h 40m - working frontend
 - 30m - working backend
-- 50h - creating layers
+- 50m - creating layers
 - 30m - researching solutions
 - 30m - adding dependency injection
 - 40m - adding vue js
 
-- Total Time: 5h 40m 
+### Total Time: 5h 40m 
+
+----
 
 ## Technologies used
 
