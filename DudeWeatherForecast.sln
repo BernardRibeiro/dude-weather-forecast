@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWF.Core", "src\DWF.Core\DW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWF.IntegrationService", "src\DWF.IntegrationService\DWF.IntegrationService.csproj", "{CDA68B04-7425-4502-8D6E-6D08082CACED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWF.Tests", "src\DWF.Tests\DWF.Tests.csproj", "{333A3244-BC81-42A4-9C09-591120F0E186}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CDA68B04-7425-4502-8D6E-6D08082CACED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA68B04-7425-4502-8D6E-6D08082CACED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA68B04-7425-4502-8D6E-6D08082CACED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{333A3244-BC81-42A4-9C09-591120F0E186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{333A3244-BC81-42A4-9C09-591120F0E186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{333A3244-BC81-42A4-9C09-591120F0E186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{333A3244-BC81-42A4-9C09-591120F0E186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

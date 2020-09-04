@@ -10,8 +10,9 @@
 - 30m - researching solutions
 - 30m - adding dependency injection
 - 40m - adding vue js
+- 45m - adding tests
 
-### Total Time: 5h 40m 
+### Total Time: 6h 25m 
 
 ----
 
@@ -23,4 +24,5 @@
 - JQuery 3.5.1
 - Bootstrap 4.5.2
 - Vue.js 2.6.11
+- Moq 4.14.5
 - Microsoft Visual Studio Community 2019
